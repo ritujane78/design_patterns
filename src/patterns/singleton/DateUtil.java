@@ -2,7 +2,7 @@ package patterns.singleton;
 
 import java.io.Serializable;
 
-public class DateUtil implements Serializable {
+public class DateUtil implements Serializable, Cloneable {
 
   private static final long serialVersionUID = 1L;
 
@@ -21,5 +21,10 @@ public class DateUtil implements Serializable {
   }
   public Object readResolve(){
     return instance;
+  }
+
+  @Override
+  protected Object clone() throws CloneNotSupportedException {
+    throw new CloneNotSupportedException();
   }
 }
