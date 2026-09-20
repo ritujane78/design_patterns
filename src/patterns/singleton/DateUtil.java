@@ -1,12 +1,12 @@
 package patterns.singleton;
 
 public class DateUtil {
-  private static DateUtil instance;
+  // Eager initialization
+  private static DateUtil instance = new DateUtil();
   private DateUtil(){
 
   }
   public static DateUtil getInstance(){
-    if(instance == null) instance = new DateUtil();
     return instance;
   }
 }
